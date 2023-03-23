@@ -1,0 +1,52 @@
+Project 1.
+
+ETL Process
+
+Step 1. Extract
+Extracted the 5 csv files on Power BI/SQL viz:
+bookings, food orders, menu, requests and rooms which are all data extracts from A hotel system 
+
+Step 2. Transform- Inspect/Understand/Clean/Normalise data
+
+
+a. Observations:
+i. There were no duplicate or null values in all the data sets. However, in the bookings table, 3 IDs i.e, 1Ds 1919, 6456 and 9516 Table had both start dates and end dates as year 1916 instead of year 2016. 
+id	room	start date	end date	request id
+1919	L11	1/7/1916	1/17/1916	938
+6456	S91	2/29/1916	3/9/1916	3101
+9516	X75	3/1/1916	3/3/1916	4604
+
+b. So click on each date to find and replace by the appropriate date in year 2016.
+
+c. Understanding the data;
+The dataset being analysed is that of A Hotel providing Room bookings, Conferences and restaurant services to its customers. The data spans for a period of 4 months with start date at 1/1/2016 and end date at 4/7/2016 for food orders; 1/1/2016 and end date at 4/13/2016, for bookings and requests. The frequency of the data is daily (i.e data is collected/recorded daily) 
+
+d.Transform data on Power Query Editor 
+
+Step 3. Load the 5 Tables by clicking Close and Apply.
+
+4. Given that this is a Relational Database a quick look at the model view on Power BI gives a quick view of the relationships between the tables viz:
+5. Designing the ER Diagram
+1. Given that there are 5 entities and thus 5 Tables.
+
+
+a. Starting from independent to dependent
+-RequestTable: The relationship between request and booking is 1 to many; implying that one request can have many books.
+          Common Column is request ID
+          
+-BookingsTable: The relationship between Bookings and room is 1 to 1; implying a booking to a room
+           Foreign key Request ID (already created)
+           Common column is Room ID (Create room ID as foreign key to replace/indicate room type/prefix)
+-RoomsTable: The relationship between Rooms and food orders is 
+
+6. Joining the Tables
+
+7. Business Intelligence 
+1. Which request type is the most profitable
+2. Which request type is complementary to the restuarant i.e serves as leads to the restaurant arm of the business
+3. Which month and day of the week is pick period?
+4. which room type is more prefered and more profitable
+5. Any repeat customer?
+6. What is the longest booking/reservation period?
+7. Which Menu category is most profitable?
+8. Which Menu category is complementary?
